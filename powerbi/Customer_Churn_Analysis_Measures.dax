@@ -1,0 +1,8 @@
+// Create these measures in the Customers table.
+Customers = DISTINCTCOUNT(Customers[Customer_ID])
+Churned Customers = CALCULATE([Customers], Customers[Churn] = 1)
+Retained Customers = CALCULATE([Customers], Customers[Churn] = 0)
+Churn Rate % = DIVIDE([Churned Customers], [Customers])
+Average Monthly Charges = AVERAGE(Customers[Monthly_Charges])
+Average Tenure (Months) = AVERAGE(Customers[Tenure_Months])
+Average Support Calls = AVERAGE(Customers[Support_Calls])
