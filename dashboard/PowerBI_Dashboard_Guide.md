@@ -1,24 +1,9 @@
-# Power BI Dashboard Guide
+# Power BI build guide
 
-## KPI Cards
-- Overall Churn %
-- Customers Churned
-- Model ROC-AUC
-- Average Monthly Charges
+Import `data/customer_churn_20000.csv`. Use the Power Query steps, DAX measures and page specification in `powerbi/`.
 
-## Visuals
-- Churn Rate by Contract
-- Churn vs Satisfaction Score
-- Churn by Internet Service
-- Churn by Support Calls
-- Churn by Tenure
+Build an overview page with customer count, churned customers, churn rate and average monthly charges. Add segment views for contract, internet service, satisfaction, tenure and support calls. Show customer counts alongside segment rates.
 
-## Slicers
-- Contract
-- Internet Service
-- Satisfaction Score
-- Tenure
-- Age
+Reconcile churned and retained counts with the source CSV. Keep model evaluation metrics separate from customer KPIs.
 
-## Business Outcome
-Use the dashboard to identify high-risk customer segments and prioritise retention actions.
+A native Power BI `.pbix` file is not included; this repository provides the import query, measures and build instructions.
