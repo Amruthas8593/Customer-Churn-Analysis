@@ -1,42 +1,39 @@
 # Customer Churn Analysis
 
-End-to-end customer analytics project using Python, SQL and Power BI to identify churn patterns and build a reproducible churn-risk model.
+This project examines customer churn in a 20,000-row dataset and compares Logistic Regression with Random Forest.
 
-## Business objective
-Understand which customer characteristics are associated with churn and provide a dashboard-ready workflow for retention analysis.
+## Questions
+- Does churn differ across contract types and internet services?
+- How does churn vary with satisfaction, tenure and support calls?
+- How well do two classification models identify customers labelled as churned?
 
-## Workflow
-1. Validate and clean customer data.
-2. Analyse churn by contract, internet service and satisfaction.
-3. Compare Logistic Regression and Random Forest classifiers.
-4. Evaluate models with Accuracy and ROC-AUC.
-5. Prepare findings for Power BI reporting.
+## Data
+The CSV contains customer ID, age, tenure, monthly charges, contract, internet service, support calls, late payments, satisfaction score and a binary churn field (0 = retained, 1 = churned).
 
-## Dataset
-20,000 customer records with age, tenure, monthly charges, contract, internet service, support calls, late payments, satisfaction score and churn status.
+## Analysis
+The notebook checks missing values, duplicate rows and the target distribution. It compares churn across customer groups, then uses a stratified train/test split. Categorical fields are one-hot encoded and numeric fields are scaled within a scikit-learn pipeline. Evaluation includes accuracy, precision, recall, F1, ROC-AUC and a confusion matrix.
 
-## Models
-- Logistic Regression — interpretable baseline
-- Random Forest — non-linear benchmark
+Model metrics are calculated when the notebook runs. No scores are stated here because they depend on the current data and run.
 
-The notebook calculates all metrics from the current dataset at runtime. README results are intentionally not hard-coded so the portfolio remains reproducible.
-
-## Dashboard
-The repository contains preview images covering overall churn, contract risk and satisfaction patterns. The dashboard guide documents the KPI and visual structure.
-
-## Repository structure
-- data/ — source dataset
-- notebooks/ — reproducible Python analysis
-- sql/ — SQL business queries
-- dashboard/ — Power BI build notes
-- images/ — portfolio visuals
-- requirements.txt — Python dependencies
+## Files
+- `data/` — customer dataset
+- `notebooks/customer_churn_analysis.ipynb` — analysis and model comparison
+- `sql/churn_analysis.sql` — MySQL queries
+- `dashboard/` — Power BI layout notes
+- `images/` — chart and dashboard previews
 
 ## Run
-Install dependencies with requirements.txt, then open notebooks/customer_churn_analysis.ipynb in Jupyter.
+From the repository root:
 
-## Skills demonstrated
-Python, Pandas, data cleaning, EDA, classification, model evaluation, SQL, Power BI and business interpretation.
+```bash
+python -m pip install -r requirements.txt
+jupyter notebook
+```
+
+Open `notebooks/customer_churn_analysis.ipynb` and run the cells in order.
+
+## Tools
+Python, Pandas, Scikit-learn, MySQL and Power BI.
 
 ## Author
-Amrutha S Panicker — MSc Data Analytics | BCA
+Amrutha S Panicker | MSc Data Analytics | BCA
